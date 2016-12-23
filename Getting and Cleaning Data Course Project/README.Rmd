@@ -1,0 +1,22 @@
+---
+title: "README"
+author: "Lindsey Gummersall"
+date: "December 23, 2016"
+output: html_document
+---
+
+## Overview
+This project is a required submission for the "Getting and Cleaning Data" course in the Johns Hopkins Data Science Specialization.  The aim of the project is to demonstrate the ability to acquire and clean a large set of data.
+
+A full description is available at the site where the data was obtained:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+##Project Summary
+This code, found in run_analysis.R, does the following:
+  -Loads feature and activity_label information
+  -Loads training and test datasets, merges these into a combined data set with appropriate labels
+  -Extracts meand and standarad deviation measurements using a logical vector
+  -Cleans up and adds appropriate data labels to columns
+  -Creates a second tidy data set that includes the average value of each variable, for each activity, for each subject
+
+The final data set can be found in the TidyData.txt file.  Additional information about the analysis can be found in teh run_analysis.R and CodeBook.Rmd files.

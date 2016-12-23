@@ -1,0 +1,51 @@
+---
+title: "CodeBook.MD"
+author: "Lindsey Gummersall"
+date: "December 23, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Getting and Cleaning Data Project
+
+###Source Data
+A full description is available at the site where the data was obtained: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+###Attribute Information
+
+The original data files include:
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+This analysis utilized the following files from the original data set:
+
+- 'features.txt': List of all features.
+- 'activity_labels.txt': Links the class labels with their activity name.
+- 'train/X_train.txt': Training set.
+- 'train/y_train.txt': Training labels.
+- 'test/X_test.txt': Test set.
+- 'test/y_test.txt': Test labels.
+- 'train/subject_train.txt': subject and training information
+- 'test/subject_test.txt': subject and test information
+
+###Methods
+
+####Section 1:
+All relevant data text files were read into 'R' from the working directory. First, the features.txt and activity_labels.txt were read-in and then descriptive column names were assigned. Second, the training data (X_train, y_train, and subject_train) were all read in and assigned relevant column names. Third, the test data (X_test, y_test, and subject_test) were all read in and assigned relevant column names.
+
+Finally, training and test data were merged into respective data tables, and then subsequently merged into a combined data set.
+
+####Section 2: 
+This section includes code that extract measurements on the mean and standard deviation for each measurement using a logical vector.  The second step in this section assignes descriptive names to lable each activity.
+
+####Section 3:
+This section modifies the column names to include appropriate labels using the gsub() function to replace and clean up data labels for each activity.
+
+####Section 4:
+The final section create a second, independent tidy data set with the average of each variable for each activity and each subject. This section utlizes the ddply() function to produe the average for each variable for each activity for each subject. The tidy data set can be found in TidyData.txt.
